@@ -1,128 +1,38 @@
-function webGLStart(){
-    var pos, $ = function(d) { return document.getElementById(d); };
-
-    var moon = new PhiloGL.O3D.Sphere({
-        nlat: 30,
-        nlong: 30,
-        radius: 2,
-        textures: 'moon.gif'
-
-})
-}
-
-PhiloGL('pure plain', {
-    Camera: {
-        podition: {
-            x: 0, y: 0, z: -7
-        }
-    },
-    textures: {
-        src: ['moon.gif'],
-        parameter: [{
-            name: 'TEXTRUE_MAG_FILTER',
-            value: 'LINEAR'
-        }, {
-            name: 'TEXTURE_MIN_FILTER',
-            value: 'LINEAR_MIPMAP_NEAREST'
-            generateMipmap: true
-        }]
-    },
-    events: {
-        onDragStart: function(e) {
-            pos = {
-                x: e.x,
-                y: e.y
-            };
-        },
-        onDragMove: function(e) {
-            var z = this.camera.position.z,
-            sign = Math.abs(z) / z;
-
-            moon.rotation.y += -(pos.x - e.x) / 100;
-            moon.rotation.x += sign * (pos.y - e.y) / 100;
-            moon.update();
-            pos.x = e.x;
-            pos.y = e.y;
-        },
-        onMouseWheel: function(e) {
-            e.stop();
-            var camera = this.camera;
-            camera.position.z += e.wheel;
-            camera.update();
-        }
-    },
-    onError: function() {
-        alert('There was an error creating the app');
-    },
-    onLoad: function(app) {
-        var gl = app.gl,
-        program = app.program,
-        scene = app.scene,
-        canvas = app.canvas,
-        camera = app.camera;
-
-        light = $('lighting'),
-        ambient = {
-            r: $('ambientR'),
-            g: $('ambientG'),
-            b: $('ambientB')
-        },
-        direction = {
-            x: $('lightDirectionX'),
-            y: $('lightDirectionY'),
-            z: $('lightDirectionZ'),
-
-            r: $('directionalR'),
-            g: $('directionalG'),
-            b: $('directionalB')
-        };
-        gl.clearColor(0.0, 0.0, 0.0, 1.0);
-        gl.clearDepth(1.0);
-        gl.enable(gl.DEPTH_TEST);
-        gl.depthFunc(gl.LEQUAL);
-        gl.viewport(0, 0, canvas.width, canvas.height);
-
-        scene.add(moon);
-
-        draw();
-
-        function draw(){
-            gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
-            var light = scene.config.lights;
-            lights.enable = lighting.checked;
-            lights.ambient = {
-                r: +ambient.r.value,
-                g: +ambient.g.value,
-                b: +ambient.b.value
-            };
-            lights.directional = {
-                color: {
-                    r: +direction.r.value,
-                    g: +direction.g.value,
-                    b: +direction.b.value
-                },
-                direction: {
-                    x: +direction.x.value,
-                    y: +direction.y.vlaue,
-                    z: +direction.z.value
-                }
-            };
-        }
-        scene.render();
-
-        Fx.requestAnimationFrame(draw);
-    }
-})
-
-window.onload = main
+var speed = 5;
+var posx = 50;
+var posy = 40;
+var lenght = 50;
+var scale = 2;
+window.onload = main;
 function main() {
 let canvas = document.getElementById("canvas");
-const b = canvas.getContext("webgl");
+const b = canvas.getContext("2d");
 
 if (b === null){
-    alert("unable to initialize WebGL. Your browser may not support it.");
+    alert("unable to initialize 2d. Your browser may not support it.");
 }
 
+b.lineWidth = 3*scale;
+b.beginPath();
+b.moveTo(50*scale, 20*scale);
+b.lineTo(50*scale, 80*scale);
+b.moveTo(50*scale, 50*scale);
+b.lineTo(150*scale,50*scale);
+b.moveTo(100*scale,30*scale);
+b.lineTo(100*scale,70*scale);
+b.moveTo(150*scale,20*scale);
+b.lineTo(150*scale,80*scale);
+b.closePath();
+b.stroke();
+b.strokeRect(posx*scale, posy*scale, 20*scale,20*scale);
+if (posy*scale<=50*scale){
+    speed=speed;
+}
+else if (posy*scale>=150*scale){
+    speed=-speed;
+}
+posy=posy+speed
+Node.appendChild(strokeRect)
 b.clearColor(0.0, 0.0, 0.0, 1.0);
 b.clear(b.COLOR_BUFFER_BIT);
 }
