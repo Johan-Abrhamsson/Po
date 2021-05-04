@@ -1,55 +1,48 @@
-var speed = 2;
-var posx = 50;
-var posy = 40;
-var lenght = 50;
-var scale = 2;
-var timeMode = 1;
+var speed = 3;
+var posx = 30;
+var posy = 75;
+const lenght = 250;
+const scale = 5;
 
 let canvas = document.getElementById("canvas");
 const b = canvas.getContext("2d");
+updateCanvas();
+
 
 function updateCanvas() {
     b.clearRect(0, 0, 500, 500);
-    
-    b.lineWidth = 3*scale;
+    b.lineWidth = 5;
     b.beginPath();
-    b.moveTo(50*scale, 20*scale);
-    b.lineTo(50*scale, 80*scale);
-    b.moveTo(50*scale, 50*scale);
-    b.lineTo(150*scale,50*scale);
-    b.moveTo(100*scale,30*scale);
-    b.lineTo(100*scale,70*scale);
-    b.moveTo(150*scale,20*scale);
-    b.lineTo(150*scale,80*scale);
+    b.moveTo(30, 20);
+    b.lineTo(30, 180);
+    b.moveTo(30, 100);
+    b.lineTo(470,100);
+    b.moveTo(250,60);
+    b.lineTo(250,140);
+    b.moveTo(470,20);
+    b.lineTo(470,180);
     b.closePath();
     b.stroke();
-    b.strokeRect(posx*scale, posy*scale, 20*scale,20*scale);
-    switch(timeMode)
-    {
-        case 0:
-    if (posx*scale < 50*scale){
+    b.strokeRect(posx+scale, posy+scale, 40,40);
+    if (posx < 30){
         speed=speed*-1;
     }
-    else if (posx*scale > 130*scale){
+    else if (posx > 470-2*scale-40){
         speed=speed*-1;
     }
-    break;
-
-    case 1:
-      if (posx*scale < 50*scale){
-        speed=speed*-1;
-        posx=posx+length;
-    }
-    else if (posx*scale > 130*scale){
-        speed=speed*-1;
-        posx=posx-length;
-    }
-    break;  
-    }
-
     posx=posx+speed;
     requestAnimationFrame(updateCanvas);
 
+}
+
+function NegTime()
+{
+    if (posx < 30){
+        posx=posx+length;
+    }
+    else if (posx > 470-2*scale-40){
+        posx=posx-length;
+    }
 }
 
 
@@ -58,6 +51,8 @@ function updateCanvas() {
 velocity = 1.0 * acceleration * deltaTime
 position = position + velocity * deltaTime
 
-*/
 
-updateCanvas();
+function lerp(v0,  v1,  t) {
+  return (1 - t) * v0 + t * v1;
+}
+*/

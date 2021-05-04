@@ -3,3 +3,6 @@ p {
   background-color: black;
   border: purple solid 23px;
 }
+canvas {
+  border: black solid 20px;
+}
