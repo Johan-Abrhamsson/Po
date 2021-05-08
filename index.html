@@ -10,12 +10,19 @@
 </head>
 <body>
     <p> hej </p>
-    <div>
-    <canvas id="canvas" width="500" height="200"></canvas>
+    <div class="drawbox">
+    <canvas id="canvasSet" width="500" height="200"></canvas>
+    <p>t</p>
     </div>
-    <button type="button">t</button>
-    <button type="button">-t</button>
-    <button type="button">p-(t)</button>
-    <button type="button">p-(-t)</button>
+    <div class="drawbox">
+    <canvas id="canvas" width="500" height="200"></canvas>
+    <p id="timeNow">t</p>
+    </div>
+    <div id ="buttonbox">
+    <button type="button" class="button" id="t" onclick="Time()">t</button>
+    <button type="button" class="button" id="-t" onclick="NegTime()">-t</button>
+    <button type="button" class="button" id="p-(t)" onclick="Plain()">p-(t)</button>
+    <button type="button" class="button" id="p-(-t)" onclick="NegPlain()">p-(-t)</button>
+    </div>
 </body>
 </html>

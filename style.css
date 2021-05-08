@@ -1,8 +1,25 @@
 p {
-  color: blue;
-  background-color: black;
-  border: purple solid 23px;
+  color: whitesmoke;
+  background-color: blue;
+  border: black solid 2px;
+  font-size: 2vmax;
 }
 canvas {
   border: black solid 20px;
+}
+
+.button {
+  border: black solid 5px;
+  height: 90px;
+  width: 90px;
+}
+
+.drawbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#buttonbox {
+  display: flex;
+  justify-content: center;
 }
