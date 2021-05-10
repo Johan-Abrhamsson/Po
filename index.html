@@ -8,21 +8,32 @@
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="style.css">
 </head>
+<header>
+    <h1> Pure Plain </h1>
+</header>
 <body>
-    <p> hej </p>
-    <div class="drawbox">
-    <canvas id="canvasSet" width="500" height="200"></canvas>
-    <p>t</p>
+    <div class="center">
+    <div id="exsample">
+    <div class="center">
+    <p >time</p>
     </div>
-    <div class="drawbox">
+    <div class="drawbox flexbox-parent">
+    <canvas id="canvasSet" width="500" height="200"></canvas>
+    </div>
+    <div class="center">
+    <p id="timeNow">time</p>
+    </div>
+    <div class="drawbox flexbox-parent">
     <canvas id="canvas" width="500" height="200"></canvas>
-    <p id="timeNow">t</p>
+
     </div>
     <div id ="buttonbox">
-    <button type="button" class="button" id="t" onclick="Time()">t</button>
-    <button type="button" class="button" id="-t" onclick="NegTime()">-t</button>
-    <button type="button" class="button" id="p-(t)" onclick="Plain()">p-(t)</button>
-    <button type="button" class="button" id="p-(-t)" onclick="NegPlain()">p-(-t)</button>
+    <button type="button" class="button sideL" id="time" onclick="Time()">time</button>
+    <button type="button" class="button sideL sideR" id="-time" onclick="NegTime()">-time</button>
+    <button type="button" class="button sideL sideR" id="p-(time)" onclick="Plain()">p-(time)</button>
+    <button type="button" class="button sideR" id="p-(-time)" onclick="NegPlain()">p-(-time)</button>
+    </div>
+    </div>
     </div>
 </body>
 </html>

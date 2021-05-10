@@ -8,7 +8,7 @@ var posy = 75
 var posySet = 75;
 var lenght = 250;
 const scale = 5;
-var timeselect = ["t","-t","p-(t)","p-(-t)"];
+var timeselect = ["time","-time","p-(time)","p-(-time)"];
 var timevalue = 0;
 var timevalueBefore = 0;
 
@@ -39,7 +39,6 @@ function updateCanvas() {
     }
     posxSet=posxSet+speedSet;
     logicPlace();
-    console.log(posx);
     requestAnimationFrame(updateCanvas);
 }
 

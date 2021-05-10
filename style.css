@@ -1,17 +1,24 @@
+body {
+  background-color: gray;
+}
+
 p {
   color: whitesmoke;
   background-color: blue;
   border: black solid 2px;
   font-size: 2vmax;
 }
-canvas {
-  border: black solid 20px;
-}
 
-.button {
-  border: black solid 5px;
-  height: 90px;
-  width: 90px;
+h1 {
+  color: whitesmoke;
+  background: blue;
+  border: darkgray ridge 0.5vmax;
+  display: flex;
+  justify-content: center;
+}
+canvas {
+  border: black solid 0.25vmax;
+  margin: 0.5vmax;
 }
 
 .drawbox {
@@ -22,4 +29,49 @@ canvas {
 #buttonbox {
   display: flex;
   justify-content: center;
+}
+
+.flexbox-parent {
+  position: relative;
+}
+.flexbox-item {
+  position: absolute;
+  top: 1fr;
+  left: 1fr;
+}
+
+.button {
+  border: black solid 0.25vmax;
+  background-color: blue;
+  color: white;
+  height: 0.5fr;
+  width: 0.5fr;
+}
+
+.bottom {
+  border-top-width: 0.125vmax;
+}
+
+.top {
+  border-bottom-width: 0.125vmax;
+}
+
+.sideL {
+  border-right-width: 0.125vmax;
+}
+
+.sideR {
+  border-left-width: 0.125vmax;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+}
+
+#exsample {
+  background-color: darkgray;
+  border: blue 1vmax ridge;
+  height: 50vmax;
+  width: 50vmax;
 }
