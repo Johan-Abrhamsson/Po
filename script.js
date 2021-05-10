@@ -1,17 +1,22 @@
+var slider = document.getElementById("Range");
+var outPut = document.getElementById("demo");
+outPut.innerHTML = slider.value;
+slider.oninput = function() {
+  outPut.innerHTML = this.value;
+}
 var speedTime= [3, 3, -3, -3]
 var speed = speedTime[0];
 var speedSet = 3;
-var posTime = [110, 330, 110, 330]
+var sliderV = parseInt(slider.value)
+var posTime = [109, 337, 109, 337]
 var posx = posTime[0];
-var posxSet = 110;
-var posy = 75
-var posySet = 75;
-var lenght = 250;
-const scale = 5;
+posTime[0] = sliderV
+var posxSet = posTime[0];
+var posy = 80
+var posySet = 80;
 var timeselect = ["time","-time","p-(time)","p-(-time)"];
 var timevalue = 0;
 var timevalueBefore = 0;
-
 
 let canvas = document.getElementById("canvas");
 let canvasSet = document.getElementById("canvasSet");
@@ -21,23 +26,24 @@ updateCanvas();
 
 function updateCanvas() {
     drawmap(b);
-    b.strokeRect(posx+scale, posy+scale, 40,40);
-    if (posx < 30){
+    b.strokeRect(posx, posy, 40,40);
+    if (posx < 32){
         speed=speed*-1;
     }
-    else if (posx > 430-2*scale){
+    else if (posx > 428){
         speed=speed*-1;
     }
     posx=posx+speed;
     drawmap(c);
-    c.strokeRect(posxSet+scale, posySet+scale, 40,40);
-    if (posxSet < 30){
+    c.strokeRect(posxSet, posySet, 40,40);
+    if (posxSet < 32){
         speedSet=speedSet*-1;
     }
-    else if (posxSet > 470-2*scale-40){
+    else if (posxSet > 428){
         speedSet=speedSet*-1;
     }
     posxSet=posxSet+speedSet;
+    sliderV = parseInt(slider.value)
     logicPlace();
     requestAnimationFrame(updateCanvas);
 }
@@ -72,7 +78,7 @@ check();
 
 function check()
 {
-    let currenttime = document.getElementsByClassName("button")[timevalue].id;
+    document.getElementsByClassName("button")[timevalue].id;
 }
 function Time()
 {
@@ -105,7 +111,7 @@ function NegPlain()
 function drawmap(e)
 {
     e.clearRect(0, 0, 500, 500);
-    e.lineWidth = 5;
+    e.lineWidth = 3;
     e.beginPath();
     e.moveTo(30, 20);
     e.lineTo(30, 180);
@@ -115,6 +121,13 @@ function drawmap(e)
     e.lineTo(250,140);
     e.moveTo(470,20);
     e.lineTo(470,180);
+    e.moveTo(129,90);
+    e.lineTo(129,110);
+    e.moveTo(357,90);
+    e.lineTo(357,110);
+    e.moveTo(250,10);
+    e.lineTo(posx+20,80);
+    e.moveTo(250,170);
     e.closePath();
     e.stroke();
 }
@@ -122,33 +135,48 @@ function drawmap(e)
 function logicPlace()
 {
     posTime[0]=posTime[0]+speedTime[0];
-    if (posTime[0] < 30){
+    if (posTime[0] < 32){
         speedTime[0]=speedTime[0]*-1;
     }
-    else if (posTime[0] > 430-2*scale){
+    else if (posTime[0] > 428){
         speedTime[0]=speedTime[0]*-1;
     }
     posTime[1]=posTime[1]+speedTime[1];
-    if (posTime[1] < 30){
+    if (posTime[1] < 32){
         speedTime[1]=speedTime[1]*-1;
     }
-    else if (posTime[1] > 430-2*scale){
+    else if (posTime[1] > 428){
         speedTime[1]=speedTime[1]*-1;
     }
     posTime[2]=posTime[2]+speedTime[2];
-    if (posTime[2] < 30){
+    if (posTime[2] < 32){
         speedTime[2]=speedTime[2]*-1;
     }
-    else if (posTime[2] > 430-2*scale){
+    else if (posTime[2] > 428){
         speedTime[2]=speedTime[2]*-1;
     }
     posTime[3]=posTime[3]+speedTime[3];
-    if (posTime[3] < 30){
+    if (posTime[3] < 32){
         speedTime[3]=speedTime[3]*-1;
     }
-    else if (posTime[3] > 430-2*scale){
+    else if (posTime[3] > 428){
         speedTime[3]=speedTime[3]*-1;
     }
+}
+
+function Restart(){
+document.getElementById("timeNow").innerHTML = timeselect[0];
+speedTime= [3, 3, -3, -3]
+speed = speedTime[0];
+speedSet = 3;
+posTime = [sliderV, 460-sliderV, sliderV, 460-sliderV]
+console.log(posTime);
+posx = posTime[0];
+posxSet = posTime[0];
+posy = 80;
+posySet = 80;
+timevalue = 0;
+timevalueBefore = 0;
 }
 /*
 

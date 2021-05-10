@@ -67,11 +67,18 @@ canvas {
 .center {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.spacearound{
+  display:flex;
+  justify-content: space-around;
+  
 }
 
 #exsample {
   background-color: darkgray;
   border: blue 1vmax ridge;
-  height: 50vmax;
-  width: 50vmax;
+  min-height: 50vmax;
+  min-width: 50vmax;
 }
