@@ -6,7 +6,7 @@ p {
   color: whitesmoke;
   background-color: blue;
   border: black solid 2px;
-  font-size: 2vmax;
+  font-size: 1.5vmax;
 }
 
 h1 {
@@ -19,6 +19,7 @@ h1 {
 canvas {
   border: black solid 0.25vmax;
   margin: 0.5vmax;
+  width: 40vmax;
 }
 
 .drawbox {
@@ -70,10 +71,9 @@ canvas {
   align-items: center;
 }
 
-.spacearound{
-  display:flex;
+.spacearound {
+  display: flex;
   justify-content: space-around;
-  
 }
 
 #exsample {
@@ -81,4 +81,31 @@ canvas {
   border: blue 1vmax ridge;
   min-height: 50vmax;
   min-width: 50vmax;
+}
+
+.headnav {
+  border: black 0.25vmax solid;
+}
+
+table {
+  color: blue;
+  background-color: darkgray;
+  border: black 0.25vmax solid;
+  border-spacing: 1vmin;
+}
+
+#intro {
+  color: blue;
+  background-color: darkgray;
+  border: black 0.25vmax solid;
+  margin: 4vmax;
+}
+
+h3 {
+  font-size: 3vmax;
+}
+
+img {
+  border: black 0.25vmax solid;
+  width: 70vmax;
 }

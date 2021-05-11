@@ -14,7 +14,7 @@ posTime[0] = sliderV
 var posxSet = posTime[0];
 var posy = 80
 var posySet = 80;
-var timeselect = ["time","-time","p-(time)","p-(-time)"];
+var timeselect = ["time","-time","P-(time)","P-(-time)"];
 var timevalue = 0;
 var timevalueBefore = 0;
 
