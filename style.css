@@ -1,3 +1,8 @@
+html {
+  scroll-behavior: smooth;
+  scroll-margin: -1vmax;
+}
+
 body {
   background-color: gray;
 }
@@ -5,7 +10,7 @@ body {
 p {
   color: whitesmoke;
   background-color: blue;
-  border: black solid 2px;
+  border: black solid 0.25vmax;
   font-size: 1.5vmax;
 }
 
@@ -42,6 +47,7 @@ canvas {
 }
 
 .button {
+  font-size: 2vmax;
   border: black solid 0.25vmax;
   background-color: blue;
   color: white;
@@ -81,10 +87,19 @@ canvas {
   border: blue 1vmax ridge;
   min-height: 50vmax;
   min-width: 50vmax;
+  margin: 4vmax;
+  padding: 2vmax;
 }
 
-.headnav {
+th {
   border: black 0.25vmax solid;
+  background-color: whitesmoke;
+  font-size: 2vmax;
+}
+td {
+  border: black 0.125vmax solid;
+  background-color: black;
+  font-size: 1.5vmax;
 }
 
 table {
@@ -97,15 +112,70 @@ table {
 #intro {
   color: blue;
   background-color: darkgray;
-  border: black 0.25vmax solid;
+  border: skyblue 1vmax ridge;
   margin: 4vmax;
+  padding: 2vmax;
+}
+
+h2 {
+  font-size: 3.5vmax;
+  color: blue;
 }
 
 h3 {
   font-size: 3vmax;
+  color: blue;
 }
 
 img {
   border: black 0.25vmax solid;
-  width: 70vmax;
+  width: 50vmax;
+}
+
+#exsampleplace {
+  border-top: black 0.25vmax solid;
+  border-bottom: black 0.25vmax solid;
+  margin: 4vmax;
+  padding: 2vmax;
+}
+
+h4 {
+  font-size: 2.5vmax;
+  color: blue;
+}
+
+#timewithnegative {
+  background-color: darkslategrey;
+  border: black 0.25vmax solid;
+  margin: 0.5vmax;
+  padding: 0.5vmax;
+}
+
+.mainText {
+  border: whitesmoke 0.25vmax ridge;
+}
+
+.smallersize {
+  width: 20vmax;
+}
+
+.spaceeven {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#moremath {
+  color: blue;
+  background-color: darkgray;
+  border: darkblue 1vmax ridge;
+  margin: 4vmax;
+  padding: 2vmax;
+}
+
+#Conclution {
+  color: blue;
+  background-color: darkgray;
+  border: blueviolet 1vmax ridge;
+  margin: 4vmax;
+  padding: 2vmax;
 }
